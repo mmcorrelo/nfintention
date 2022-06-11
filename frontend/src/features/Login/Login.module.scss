@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: linear-gradient(rgb(234, 230, 255), rgb(255, 255, 255)) no-repeat;
+
+  .background {
+    width: 70%;
+    height: 70%;
+    background: url(/assets/bg.svg) no-repeat center center;
+    background-size: contain;
+    opacity: 0.9;
+  }
+
+  .slogan {
+    position: fixed;
+    top: 9%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .content {
+      max-width: 800px;
+      text-align: center;
+    }
+  }
+
+  .subtitle {
+    font-size: 24px;
+    text-align: left;
+    margin-top: 0.25rem;
+    text-align: center;
+    color: rgb(53, 56, 64);
+  }
+}
