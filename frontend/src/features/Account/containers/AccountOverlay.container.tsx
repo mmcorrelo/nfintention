@@ -1,7 +1,6 @@
 import { InferProps } from 'prop-types';
 import React, { useContext, useState } from 'react';
 import MetamaskContext from '../../../contexts/MetamaskContext';
-import AddBoardModal from '../../Board/components/AddBoardModal';
 import AddBoardModalContainer from '../../Board/containers/AddBoardModal.container';
 import { EAccountOverlay } from '../AccountOverlay.enums';
 import AccountOverlay from '../components/AccountOverlay';

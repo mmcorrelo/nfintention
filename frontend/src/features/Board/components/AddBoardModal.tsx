@@ -11,7 +11,8 @@ import { TAddBoardRef } from '../Board.interfaces';
 const propTypes = {
   show: PropTypes.bool.isRequired,
   onHide: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  isSaving: PropTypes.bool.isRequired
 };
 
 const AddBoardModal = (props: InferProps<typeof propTypes>) => {
@@ -37,7 +38,9 @@ const AddBoardModal = (props: InferProps<typeof propTypes>) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="danger" onClick={props.onHide}>Close</Button>
-        <Button variant="success" onClick={onSubmitHandler}>Save</Button>
+        <Button variant="success" onClick={onSubmitHandler}>
+          {props.isSaving ? 'Saving...' : 'Save'}
+        </Button>
       </Modal.Footer>
     </Modal>
   )

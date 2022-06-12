@@ -1,9 +1,11 @@
 import PropTypes, { InferProps } from 'prop-types';
+import React, { useEffect } from 'react';
 import { IAddBoard } from '../Board.interfaces';
 
 import styles from './AddBoardModal.container.module.scss';
 
 import AddBoardModal from '../components/AddBoardModal';
+import { useCreateBoardMutation } from '../Board.slice';
 
 const propTypes = {
   show: PropTypes.bool.isRequired,
@@ -11,14 +13,16 @@ const propTypes = {
 };
 
 const AddBoardModalContainer = (props: InferProps<typeof propTypes>) => {
-  const onSubmitHandler = (formData: IAddBoard) => { 
-    //TODO submit to server
-    console.log('formData: ', formData);
+  const [createBoard, { isLoading }] = useCreateBoardMutation();
+
+  const onSubmitHandler = (formData: IAddBoard) => {
+    createBoard({ ...formData, columns: [] });
   }
 
   return (
     <AddBoardModal
       show={props.show}
+      isSaving={isLoading}
       onHide={props.onHide}
       onSubmit={onSubmitHandler}
     />
