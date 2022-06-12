@@ -44,7 +44,6 @@ const AccountOverlay = (props: InferProps<typeof propTypes>) => {
           <Popover.Header as="h3">Account</Popover.Header>
           <Popover.Body className={`${ styles['account-overlay'] } ${ styles.body }`}>
             <ul className={`${ styles['account-overlay'] }`}>
-              <li onClick={onClickOptionHandler.bind(null, EAccountOverlay.AddBoard)}>Add New Board</li>
               <li onClick={onClickOptionHandler.bind(null, EAccountOverlay.Disconnect)}>Disconnect</li>
             </ul>
           </Popover.Body>

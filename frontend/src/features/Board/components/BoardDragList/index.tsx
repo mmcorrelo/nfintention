@@ -7,10 +7,9 @@ import { ICardItem } from "../../Board.interfaces";
 import { staticElements, removeFromList, addToList, defaultCardsTitle } from "./BoardDragList.utils";
 
 const DragDropContextContainer = styled.div`
-  padding: 20px;
+  padding: 1rem;
   border-radius: 6px;
   max-height: 100%;
-  margin-top: 75px;
   width: 100%;
 `;
 

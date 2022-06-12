@@ -1,8 +1,9 @@
-import { Draggable, DraggableProvided, DraggableStateSnapshot, DroppableId, DroppableProvided } from "react-beautiful-dnd";
+import { Draggable, DraggableProvided, DraggableStateSnapshot, DroppableId } from "react-beautiful-dnd";
 import styled from "styled-components";
-import PropTypes, { InferProps } from 'prop-types';
+import PropTypes from 'prop-types';
 import { generateFromString } from "generate-avatar";
-import { ICardItem } from "../Board.interfaces";
+
+import { ICardItem } from "../../Board.interfaces";
 
 const Avatar = styled.img`
   height: 30px;

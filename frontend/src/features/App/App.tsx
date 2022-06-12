@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
 import MetamaskContext from '../../contexts/MetamaskContext';
-import HomeContainer from '../Home/containers/Home.container';
-import Login from '../Login';
-import MainFooter from '../MainFooter';
-import MainHeader from '../MainHeader';
+import HomeContainer from '../Home/containers/Home';
+import Login from '../Login/components/Login';
+import MainFooter from '../MainFooter/components';
+import MainHeader from '../MainHeader/components';
 
 import './App.scss';
 

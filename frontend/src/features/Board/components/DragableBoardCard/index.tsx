@@ -1,8 +1,8 @@
 import { Droppable, DroppableId, DroppableProvided } from "react-beautiful-dnd";
-import BoardCard from "./BoardCard";
+import BoardCard from "../BoardCard";
 import PropTypes, { InferProps } from 'prop-types';
 import styled from "styled-components";
-import { ICardItem } from "../Board.interfaces";
+import { ICardItem } from "../../Board.interfaces";
 
 const ColumnHeader = styled.div`
   text-transform: uppercase;

@@ -1,10 +1,7 @@
 import PropTypes, { InferProps } from 'prop-types';
-import React, { useEffect } from 'react';
 import { IAddBoard } from '../../Board.interfaces';
 
-import styles from './AddBoardModal.container.module.scss';
-
-import AddBoardModal from '../../components/AddBoardModal/AddBoardModal'
+import AddBoardModal from '../../components/AddBoardModal'
 import { useCreateBoardMutation } from '../../Board.slice';
 
 const propTypes = {

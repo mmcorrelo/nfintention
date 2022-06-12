@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareNfi } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
 
-import MetamaskContext from '../../contexts/MetamaskContext';
-import AccountOverlayContainer from '../Account/containers/AccountOverlay/AccountOverlay.container';
+import MetamaskContext from '../../../contexts/MetamaskContext';
+import AccountOverlayContainer from '../../Account/containers/AccountOverlay';
 
 import styles from './MainHeader.module.scss';
 
