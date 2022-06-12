@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { DragDropContext, DropResult, ResponderProvided } from "react-beautiful-dnd";
 
-import DraggableBoardCard from "./DragableBoardCard";
-import { ICardItem } from "../Board.interfaces";
+import DraggableBoardCard from "../DragableBoardCard";
+import { ICardItem } from "../../Board.interfaces";
 import { staticElements, removeFromList, addToList, defaultCardsTitle } from "./BoardDragList.utils";
 
 const DragDropContextContainer = styled.div`

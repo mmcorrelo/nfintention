@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button';
 
 import styles from './AddBoard.module.scss';
 
-import AddBoard from './AddBoard';
-import { TAddBoardRef } from '../Board.interfaces';
+import AddBoard from '../AddBoard/AddBoard';
+import { TAddBoardRef } from '../../Board.interfaces';
 
 const propTypes = {
   show: PropTypes.bool.isRequired,

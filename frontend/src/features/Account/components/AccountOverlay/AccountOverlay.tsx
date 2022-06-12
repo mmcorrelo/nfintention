@@ -7,7 +7,7 @@ import Popover from 'react-bootstrap/Popover';
 
 import styles from './AccountOverlay.module.scss';
 
-import { EAccountOverlay } from '../AccountOverlay.enums';
+import { EAccountOverlay } from '../../Account.enums';
 
 const propTypes = {
   onOverlayItemClicked: PropTypes.func.isRequired
@@ -25,12 +25,15 @@ const AccountOverlay = (props: InferProps<typeof propTypes>) => {
 
   const onClickOptionHandler = (type: EAccountOverlay, ev: React.BaseSyntheticEvent) => {
     props.onOverlayItemClicked(type);
+    setShow(false);
   };
 
   return (
     <div ref={ref} className={styles['account-overlay']}>
       <FontAwesomeIcon onClick={handleClick} icon={faUserAstronaut} size="2x" />
       <Overlay
+        rootClose
+        onHide={() => setShow(false)}
         show={show}
         target={target}
         placement="bottom"

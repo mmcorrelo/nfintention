@@ -1,4 +1,4 @@
-import { ICardItem } from "../Board.interfaces";
+import { ICardItem } from "../../Board.interfaces";
 
 const removeFromList: (list: Array<ICardItem>, index: number) => [ICardItem, Array<ICardItem>] = (list: Array<ICardItem>, index: number) => {
   const result = Array.from(list);

@@ -4,7 +4,7 @@ import { faSquareNfi } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
 
 import MetamaskContext from '../../contexts/MetamaskContext';
-import AccountOverlayContainer from '../Account/containers/AccountOverlay.container';
+import AccountOverlayContainer from '../Account/containers/AccountOverlay/AccountOverlay.container';
 
 import styles from './MainHeader.module.scss';
 

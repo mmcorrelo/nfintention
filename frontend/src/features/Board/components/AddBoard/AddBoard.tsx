@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 import styles from './AddBoard.module.scss';
 
-import { IAddBoard, TAddBoardRef } from '../Board.interfaces';
+import { IAddBoard, TAddBoardRef } from '../../Board.interfaces';
 
 const propTypes: Record<string | symbol | number, PropTypes.Validator<any>> = {
   onSubmit: PropTypes.func.isRequired
