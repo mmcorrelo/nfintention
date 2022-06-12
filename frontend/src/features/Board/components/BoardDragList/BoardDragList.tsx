@@ -20,7 +20,7 @@ const ListGrid = styled.div`
   grid-gap: 8px;
 `;
 
-const DragList = () => {
+const BoardDragList = () => {
   const [elements, setElements] = React.useState<Record<string, Array<ICardItem>>>(staticElements);
 
   const onDragEnd = (result: DropResult, provided: ResponderProvided) => {
@@ -58,4 +58,4 @@ const DragList = () => {
   );
 }
 
-export default DragList;
+export default BoardDragList;

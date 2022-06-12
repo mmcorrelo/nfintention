@@ -1,4 +1,4 @@
-import DragList from '../../Board/components/BoardDragList/BoardDragList';
+import BoardDragList from '../../Board/components/BoardDragList/BoardDragList';
 
 import styled from "styled-components";
 
@@ -16,8 +16,7 @@ const propTypes = {};
 const Home = () => {
   return (
     <Dashboard>
-      <
-      <DragList />
+      <BoardDragList />
     </Dashboard>
   );
 };
