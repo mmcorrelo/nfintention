@@ -1,4 +1,4 @@
-import { InferType } from "prop-types";
+import PropType, { InferType } from "prop-types";
 import styled from "styled-components";
 import Button from 'react-bootstrap/Button';
 import React, { useState } from "react";
@@ -11,20 +11,33 @@ const BoardHeaderContainer = styled.div`
   padding: .5rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 `;
 
-const propTypes = {};
+const BoardHeaderTitle = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+`;
 
-const BoardHeader = (props: InferType<typeof propTypes>) => {
+const propTypes = {
+  title: PropType.string.isRequired
+};
+
+const defaultProps: InferType<typeof propTypes> = {
+  title: ''
+}
+
+const BoardHeader = (props: InferType<typeof propTypes> = defaultProps) => {
   const [show, setShow] = useState<boolean>(false);
 
   const onHideModalHandler = () => setShow(false);
-  const onShowModalHandler = () => setShow(false);
+  const onShowModalHandler = () => setShow(true);
 
   return (
     <React.Fragment>
       <BoardHeaderContainer>
+        <BoardHeaderTitle>{props.title}</BoardHeaderTitle>
         <Button variant="primary" onClick={onShowModalHandler}>Add Board</Button>
       </BoardHeaderContainer>
       <AddBoardModalContainer show={show} onHide={onHideModalHandler} />
@@ -32,6 +45,7 @@ const BoardHeader = (props: InferType<typeof propTypes>) => {
   )
 }
 
-export default BoardHeader;
-
 BoardHeader.propTypes = propTypes;
+BoardHeader.defaultProps = defaultProps;
+
+export default BoardHeader;

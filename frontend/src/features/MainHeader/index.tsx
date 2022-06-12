@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareNfi } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
 
-import MetamaskContext from '../../contexts/MetamaskContext';
+import AuthContext from '../../contexts/AuthContext';
 import AccountOverlayContainer from '../Account/containers/AccountOverlay';
 
 import styles from './MainHeader.module.scss';
 
 const MainHeader = () => {
-  const metaMaskContext = useContext(MetamaskContext);
+  const wallet = useContext(AuthContext);
 
   return (
     <header className={styles.container}>
@@ -20,15 +20,15 @@ const MainHeader = () => {
         </div>
         <ul className={styles['main-header']}>
           {
-            metaMaskContext.isConnected &&
+            wallet.isConnected &&
             <li className={`${ styles.item } ${ styles.right }`}>
               <AccountOverlayContainer/>
             </li>
           }
           {
-            !metaMaskContext.isConnected && 
+            !wallet.isConnected && 
             <li className={`${ styles.item } ${ styles.right }`}>
-              <Button variant="primary" onClick={metaMaskContext.connect}>Connect Wallet</Button>
+              <Button variant="primary" onClick={wallet.connect}>Connect Wallet</Button>
             </li>
           }
         </ul>

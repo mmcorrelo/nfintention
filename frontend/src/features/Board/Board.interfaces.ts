@@ -16,7 +16,15 @@ export interface ICardItem {
   content: string;
 }
 
-export interface IAddBoard {
+export interface IAddBoardPayload {
+  account: string;
+  name: string;
+  description: string;
+}
+
+export type IAddBoard = Omit<IAddBoardPayload, 'account'>;
+export interface IBoardResponse {
+  id: string;
   name: string;
   description: string;
 }

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import MetamaskContext from '../../contexts/MetamaskContext';
+import AuthContext from '../../contexts/AuthContext';
 import Home from '../Home';
 import Login from '../Login';
 import MainFooter from '../MainFooter';
@@ -9,14 +9,14 @@ import MainHeader from '../MainHeader';
 import './App.scss';
 
 function App() {
-  const metamaskContext = useContext(MetamaskContext);
+  const wallet = useContext(AuthContext);
 
   return (
     <React.Fragment>
       <MainHeader />
       <main>
-        {!metamaskContext.isConnected && <Login />}
-        {metamaskContext.isConnected && <Home />}
+        {!wallet.isConnected && <Login />}
+        {wallet.isConnected && <Home />}
       </main>
       <MainFooter />
     </React.Fragment>

@@ -3,8 +3,6 @@ import { useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-import styles from './AddBoard.module.scss';
-
 import AddBoard from '../AddBoard';
 import { TAddBoardRef } from '../../Board.interfaces';
 
@@ -38,7 +36,7 @@ const AddBoardModal = (props: InferProps<typeof propTypes>) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="danger" onClick={props.onHide}>Close</Button>
-        <Button variant="success" onClick={onSubmitHandler}>
+        <Button variant="success" onClick={onSubmitHandler} disabled={props.isSaving}>
           {props.isSaving ? 'Saving...' : 'Save'}
         </Button>
       </Modal.Footer>

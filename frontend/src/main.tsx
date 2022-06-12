@@ -7,15 +7,15 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
-import { MetamaskContextProvider } from './contexts/MetamaskContext';
+import { AuthContextProvider } from './contexts/AuthContext';
 import { store } from './features/App/App.store';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <MetamaskContextProvider>
+    <AuthContextProvider>
       <App />
-    </MetamaskContextProvider>
+    </AuthContextProvider>
   </Provider>
 );
 
