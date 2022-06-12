@@ -1,4 +1,3 @@
-import Button from '../../shared/components/Button';
 import styles from './Login.module.scss';
 
 const Login = () => {
@@ -16,6 +15,5 @@ const Login = () => {
     </div >
   );
 };
-
 
 export default Login;

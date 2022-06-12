@@ -8,6 +8,7 @@ export interface IMetamaskContext {
   isConnecting: boolean;
   accounts: Array<string>;
   connect: () => Promise<void>;
+  desconnect: () => void;
 }
 
 const defaultContext = {
@@ -15,7 +16,8 @@ const defaultContext = {
   isInstalled: false,
   isConnecting: false,
   accounts: [] as Array<string>,
-  connect:  () => Promise.resolve()
+  connect: () => Promise.resolve(),
+  desconnect: () => {}
 };
 
 const MetamaskContext: React.Context<IMetamaskContext> = React.createContext(defaultContext);
@@ -40,21 +42,27 @@ export const MetamaskContextProvider = (props: typeof propTypes & { children: JS
         setAccounts(requestedAccounts);
         setIsConnecting(false);
         setIsConnected(true);
-
-      } catch(err) {
+      } catch (err) {
         setIsConnecting(false);
         setIsConnected(false);
       }
     }
   };
 
+  const handleDesconnection = () => {
+    setIsConnecting(false);
+    setIsConnected(false);
+    setAccounts([]);
+  }
+
   return (
-    <MetamaskContext.Provider value={{ 
-      isConnected, 
-      isConnecting, 
-      isInstalled, 
+    <MetamaskContext.Provider value={{
+      isConnected,
+      isConnecting,
+      isInstalled,
       accounts,
-      connect: handleConnection
+      connect: handleConnection,
+      desconnect: handleDesconnection,
     }}>
       {props.children}
     </MetamaskContext.Provider>

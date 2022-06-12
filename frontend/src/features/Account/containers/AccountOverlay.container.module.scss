@@ -1,0 +1,23 @@
+.account-overlay {
+	margin-bottom: .5rem;
+	& ul {
+		min-width: 274px;
+		padding: 0;
+		margin: 1rem;
+	}
+
+	& ul li {
+		text-align: left;
+		padding: .5rem 1rem .5rem 1rem;
+	}
+
+	& ul li:hover {
+		background-color: rgb(234, 230, 255);
+		font-weight: bold;
+	}
+
+	&.body {
+		padding: 0;
+	}
+
+}

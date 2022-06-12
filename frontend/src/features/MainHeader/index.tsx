@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserAstronaut, faSquareNfi } from '@fortawesome/free-solid-svg-icons';
+import { faSquareNfi } from '@fortawesome/free-solid-svg-icons';
+import Button from 'react-bootstrap/Button';
+
+import MetamaskContext from '../../contexts/MetamaskContext';
+import AccountOverlayContainer from '../Account/containers/AccountOverlay.container';
 
 import styles from './MainHeader.module.scss';
-import MetamaskContext from '../../contexts/MetamaskContext';
-import Button from '../../shared/components/Button';
 
 const MainHeader = () => {
   const metaMaskContext = useContext(MetamaskContext);
@@ -16,17 +18,17 @@ const MainHeader = () => {
           <FontAwesomeIcon icon={faSquareNfi} size="3x" />
           <span>ntention</span>
         </div>
-        <ul>
+        <ul className={styles['main-header']}>
           {
             metaMaskContext.isConnected &&
             <li className={`${ styles.item } ${ styles.right }`}>
-              <FontAwesomeIcon icon={faUserAstronaut} size="2x" tabIndex={0} />
+              <AccountOverlayContainer/>
             </li>
           }
           {
             !metaMaskContext.isConnected && 
             <li className={`${ styles.item } ${ styles.right }`}>
-              <Button onClick={metaMaskContext.connect}>Connect Wallet</Button>
+              <Button variant="primary" onClick={metaMaskContext.connect}>Connect Wallet</Button>
             </li>
           }
         </ul>

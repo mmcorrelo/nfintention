@@ -6,6 +6,8 @@ import Login from '../Login';
 import MainFooter from '../MainFooter';
 import MainHeader from '../MainHeader';
 
+import './App.scss';
+
 function App() {
   const metamaskContext = useContext(MetamaskContext);
   
