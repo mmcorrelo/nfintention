@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
 import MetamaskContext from '../../contexts/MetamaskContext';
-import HomeContainer from '../Home/containers/Home';
-import Login from '../Login/components/Login';
-import MainFooter from '../MainFooter/components';
-import MainHeader from '../MainHeader/components';
+import Home from '../Home';
+import Login from '../Login';
+import MainFooter from '../MainFooter';
+import MainHeader from '../MainHeader';
 
 import './App.scss';
 
@@ -16,7 +16,7 @@ function App() {
       <MainHeader />
       <main>
         {!metamaskContext.isConnected && <Login />}
-        {metamaskContext.isConnected && <HomeContainer />}
+        {metamaskContext.isConnected && <Home />}
       </main>
       <MainFooter />
     </React.Fragment>

@@ -1,7 +1,6 @@
-import BoardDragList from '../../../Board/components/BoardDragList';
-
 import styled from "styled-components";
-import BoardHeader from '../../../Board/components/BoardHeader';
+
+import Board from '../Board';
 
 const Dashboard = styled.div`
   width: 100%;
@@ -18,8 +17,7 @@ const propTypes = {};
 const Home = () => {
   return (
     <Dashboard>
-      <BoardHeader/>
-      <BoardDragList />
+      <Board/>
     </Dashboard>
   );
 };
