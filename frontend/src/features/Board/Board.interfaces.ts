@@ -6,9 +6,10 @@ export interface IBoardColumn {
 }
 
 export interface IBoard {
-  name: string;
+  id: string;
   description: string;
-  columns: Array<IBoardColumn>;
+  name: string;
+  columns?: Array<IBoardColumn>;
 }
 export interface ICardItem {
   id: number;
@@ -23,11 +24,8 @@ export interface IAddBoardPayload {
 }
 
 export type IAddBoard = Omit<IAddBoardPayload, 'account'>;
-export interface IBoardResponse {
-  id: string;
-  name: string;
-  description: string;
-}
+
+export type IBoardResponse = IBoard;
 
 interface IAddBoardRef {
   submitForm: typeof PropTypes.func.isRequired

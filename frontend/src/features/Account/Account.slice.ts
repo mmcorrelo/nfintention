@@ -19,7 +19,7 @@ export const accountApiSlice = createApi({
             fetchAccount: builder.query<IAccountResponse, string | void>({
                 query: (account: string) => ({
                     url: `/accounts/${ account }.json`,
-                    responseHandler: ApiUtils.convert
+                    responseHandler: ApiUtils.handleObject
                 }),
                 providesTags: ['Account'],
             }),
@@ -28,7 +28,7 @@ export const accountApiSlice = createApi({
                     url: `/accounts/${ request.address }.json`,
                     method: 'POST',
                     body: request,
-                    responseHandler: ApiUtils.convertToId
+                    responseHandler: ApiUtils.handleObject
                 })
             }),
             updateAccount: builder.mutation<IAccountResponse, IAccountPayload | void>({
@@ -36,7 +36,7 @@ export const accountApiSlice = createApi({
                     url: `/accounts/${ request.address }.json`,
                     method: 'PUT',
                     body: request,
-                    responseHandler: ApiUtils.convert
+                    responseHandler: ApiUtils.handleObject
                 })
             }),
         }

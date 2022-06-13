@@ -1,27 +1,30 @@
-import PropType, { InferType } from "prop-types";
-import { useContext, useEffect } from "react";
-import AuthContext from "../../../../contexts/AuthContext";
-import { IBoardResponse } from "../../Board.interfaces";
-import { useFetchBoardsQuery } from "../../Board.slice";
+import { InferType } from "prop-types";
+import { useEffect } from "react";
+import { useUpdateAccountDefaultBoardMutation } from "../../../Account/Account.hooks";
+import { useFetchAccountBoards } from "../../Board.hooks";
 
 import BoardHeader from "../../components/BoardHeader";
 
 const propTypes = {};
-
 const defaultProps: InferType<typeof propTypes> = {}
 
 const BoardHeaderContainer = (props: InferType<typeof propTypes> = defaultProps) => {
-  const authContext = useContext(AuthContext);
-  const address = authContext.wallet.address;
+  const { data: boards } = useFetchAccountBoards();
+  const [updateAccount] = useUpdateAccountDefaultBoardMutation()
 
-  // const { data = [], isLoading } = useFetchBoardsQuery(address);
-const data = {}
+  useEffect(() => {
+    const fn = async () => {
+      if (boards && boards.length) {
+        await updateAccount(boards[0]);
+      }
+    };
+
+    fn();
+  }, [boards]);
+
   return (
-    <>
       <BoardHeader />
-      {JSON.stringify(data)}
-    </>
-  )
+  );
 }
 
 BoardHeaderContainer.propTypes = propTypes;

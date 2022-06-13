@@ -18,7 +18,7 @@ export const boardApiSlice = createApi({
             fetchBoards: builder.query<Array<IBoardResponse>, string | void>({
                 query: (account: string) => ({
                     url: `/${ account }/boards.json`,
-                    responseHandler: ApiUtils.convert
+                    responseHandler: ApiUtils.handleList
                 }),
                 providesTags: ['Board']
             }),
@@ -27,7 +27,7 @@ export const boardApiSlice = createApi({
                     url: `/${ request.account }/boards.json`,
                     method: 'POST',
                     body: request,
-                    responseHandler: ApiUtils.convert
+                    responseHandler: ApiUtils.handleObject
                 }),
             }),
         }

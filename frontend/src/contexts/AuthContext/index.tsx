@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { IAccountResponse } from "../../features/Account/Account.interfaces";
-import { accountApiSlice, useCreateAccountMutation, useFetchAccountQuery } from "../../features/Account/Account.slice";
+import { accountApiSlice, useCreateAccountMutation } from "../../features/Account/Account.slice";
 import { useAppDispatch, useAppSelector } from "../../features/App/App.hooks";
-import { useCreateBoardMutation } from "../../features/Board/Board.slice";
 
 const { ethereum } = window;
 
@@ -55,7 +54,7 @@ export const AuthContextProvider = (props: typeof propTypes & { children: JSX.El
   useEffect(() => {
     const createAccount = async () => {
       if (address && !data?.id) {
-        const result = await createAccountTrigger({ address, defaultBoard: undefined }).unwrap();
+        await createAccountTrigger({ address, defaultBoard: undefined });
       }
 
     }
