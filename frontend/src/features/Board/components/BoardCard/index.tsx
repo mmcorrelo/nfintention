@@ -50,11 +50,10 @@ const propTypes = {
 const BoardCard = ({ item, index }: { item: ICardItem, index: number }) => {
   return (
     <Draggable draggableId={`${item.id}` as DroppableId} index={index}>
-      {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => {
+      {(provided: DraggableProvided) => {
         return (
           <DragItem
             ref={provided.innerRef}
-            snapshot={snapshot}
             {...provided.draggableProps}
             {...provided.dragHandleProps}>
             <CardHeader>{item.title}</CardHeader>
