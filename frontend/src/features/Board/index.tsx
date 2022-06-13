@@ -9,7 +9,7 @@ const Board = () => {
   return (
     <React.Fragment>
       <BoardHeaderContainer />
-      {/* <BoardDragList /> */}
+      <BoardDragList />
     </React.Fragment>
   );
 };

@@ -48,8 +48,6 @@ const propTypes = {
 };
 
 const BoardCard = ({ item, index }: { item: ICardItem, index: number }) => {
-  const randomHeader = 'Cenas';
-
   return (
     <Draggable draggableId={`${item.id}` as DroppableId} index={index}>
       {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => {
@@ -59,12 +57,12 @@ const BoardCard = ({ item, index }: { item: ICardItem, index: number }) => {
             snapshot={snapshot}
             {...provided.draggableProps}
             {...provided.dragHandleProps}>
-            <CardHeader>{randomHeader}</CardHeader>
-            <span>Content</span>
+            <CardHeader>{item.title}</CardHeader>
+            {/* <span>Content</span> */}
             <CardFooter>
               <span>{item.content}</span>
               <Author>
-                {item.id}
+                <b>{item.author}</b>
                 <Avatar src={`data:image/svg+xml;utf8,${ generateFromString(`${item.id}`) }`}/>
               </Author>
             </CardFooter>

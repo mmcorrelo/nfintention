@@ -15,32 +15,40 @@ const addToList = (list: Array<ICardItem>, index: number, element: ICardItem) =>
   return result;
 };
 
-const defaultCardsTitle: Array<string> = ["todo", "inProgress", "done"];
+const defaultCardsTitle: Array<string> = ["todo", "working", "done"];
 const staticElements: Record<string, Array<ICardItem>> = {
   todo: [
     {
       id: 1,
+      title: 'Task 1',
       prefix: 'aa-',
-      content: 'this is content todo 1'
+      author: 'Jonh',
+      content: 'Some description'
     },
     {
       id: 2,
+      title: 'Task 2',
+      author: 'Tom',
       prefix: 'ab-',
-      content: 'this is content todo 2'
+      content: 'Some description'
     }
   ],
-  inProgress: [
+  working: [
     {
       id: 3,
+      title: 'Task 3',
+      author: 'Math',
       prefix: 'ab-',
-      content: 'this is content inProgress 3'
+      content: 'Some description'
     }
   ],
   done: [
     {
       id: 4,
+      title: 'Task 4',
+      author: 'Kira',
       prefix: 'ac-',
-      content: 'this is content done 4'
+      content: 'Some description'
     }
   ]
 };

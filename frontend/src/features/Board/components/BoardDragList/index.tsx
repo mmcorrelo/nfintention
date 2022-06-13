@@ -20,15 +20,15 @@ const ListGrid = styled.div`
   grid-gap: 8px;
 `;
 
-const propTypes = {
+/* const propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     prefix: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired
   })).isRequired
-}
+} */
 
-const BoardDragList = (props: {cards: Array<ICardItem>}) => {
+const BoardDragList = (/* props: {cards: Array<ICardItem>} */) => {
   const [elements, setElements] = React.useState<Record<string, Array<ICardItem>>>(staticElements);
 
   const onDragEnd = (result: DropResult, provided: ResponderProvided) => {

@@ -13,8 +13,10 @@ export interface IBoard {
 }
 export interface ICardItem {
   id: number;
+  title: string;
   prefix: string;
   content: string;
+  author: string;
 }
 
 export interface IAddBoardPayload {
